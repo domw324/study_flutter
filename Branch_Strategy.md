@@ -33,8 +33,9 @@
 
 ## 코드 반영 정책
 ### 기본 정책
-1. 항상 **Full Merge Request**를 한다. Rebase, 강제 Merge 금지.
-2. Merge와 함께 **코드리뷰** 실시.
+1. 코드 반영 방향 기본적으로 **Feature > Dev. > Master**. (Featrue와 Dev. 사이에서는 조금 다를 수 있는데 아래 참조.)
+2. 항상 **Full Merge Request**를 한다. Rebase, 강제 Merge 금지.
+3. Merge와 함께 **코드리뷰** 실시.
 
 #### Full Merge Request
 - Dev.의 안정성을 해칠 수 있는 **Rebase, 강제 Merge 금지**
