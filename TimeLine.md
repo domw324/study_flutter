@@ -60,4 +60,11 @@
 - (가능하다면) Flutter 기초
 #### 달성
 - Git Branch 활용 전략 정리 완료. ~~Flutter는 내일부터. 원래 공부는 내일부터다.~~
+
+### 20.08.20.목
+#### 목표
+- 가볍게 Flutter 기초
+#### 달성
+- Flutter 기초
+    - [LEE'Today](https://velog.io/@ieed0205?tag=flutter) 블로그
 --- 
