@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -26,7 +24,49 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Flutter Excercise'),
+          backgroundColor: Colors.deepPurple,
+          centerTitle: true,
+          elevation: 0.0,
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.access_time),
+              onPressed: () {},
+            )
+          ]
+        ),
+        drawer: Drawer(
+          child: Container(
+            child: Column(
+              children: <Widget>[
+                Container(
+                  height: 150.0,
+                  color: Colors.deepPurpleAccent,
+                )
+              ],
+            ),
+          )
+        ),
+        body : CustomScrollView(
+          slivers: <Widget>[
+            SliverGrid(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2
+              ),
+              delegate: SliverChildBuilderDelegate(
+                (context,int index) => Container(
+                  child: Center(
+                    child: Text("Item $index"),
+                  ),
+                ),
+                  childCount: 20
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
