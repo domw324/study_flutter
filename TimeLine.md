@@ -1,6 +1,9 @@
 # Study Time Line - day by day
 - flutter 공부를 하면서 매일매일의 목표와 달성한 것들을 기록
-- 느낌상 프로젝트 개발을 본격적으로 시작하면 
+- 느낌상 프로젝트 개발을 본격적으로 시작하면 그냥 프로젝트 진행상황이 기록 될 것 같다.
+---
+
+공식 프로젝트 공유 페이지 : [Coffee-Street](https://github.com/Coffee-Street/Document)
 
 --- 
 ## 0 주차
@@ -67,4 +70,24 @@
 #### 달성
 - Flutter 기초
     - [LEE'Today](https://velog.io/@ieed0205?tag=flutter) 블로그
+
+### 20.08.23.일
+#### 목표
+- Flutter 화면 생성/표시 매커니즘 이해하기
+#### 달성
+- [Google CodeLab](https://codelabs.developers.google.com/)
+    - 영어도 되어있다는 단점 빼고는 처음부터 따라가기에 좋은 편
+    - 다행히 1도 모르는 상태에서 widget 개념이 쪼오끔 생긴것 같다..
+    - Widget이 함수와 비슷한 개념으로 사용되는 것 같긴하다 ~~아님말고~~. 물론 예약어처럼 꼭 있어야 하는 부분이 있긴하다. 예를 들어 build 와 같은 부분!
+      ```
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold(
+          appBar: AppBar(
+            title: Text('Startup Name Generator'),
+          ),
+          body: _buildSuggestions(),
+        );
+      }
+      ```
 --- 
