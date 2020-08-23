@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+import 'codelabs_first_1.dart';
+
+void main() => runApp(FirstFlutterApp1());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -53,10 +55,13 @@ class MyApp extends StatelessWidget {
           slivers: <Widget>[
             SliverGrid(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2
+                crossAxisCount: 2, // 격자 수
+                mainAxisSpacing: 10.0, // 주축 간격
+                crossAxisSpacing: 10.0, // 교차 축 간격
               ),
               delegate: SliverChildBuilderDelegate(
                 (context,int index) => Container(
+                  color : Colors.yellowAccent,
                   child: Center(
                     child: Text("Item $index"),
                   ),
