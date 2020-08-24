@@ -8,7 +8,7 @@
 --- 
 ## 0 주차
 
-### 20.08.16.일
+### 회의록 - 20.08.16.일
 - 프로젝트 시작
 - 첫 회의 : 자기소개와 전체적인 프로젝트 개요 소개
 - 다음 회의 전까지 해야할 일 (회의는 매주 일요일 오후 10시)
@@ -93,10 +93,17 @@
 ---
 ## 1 주차
 
-### 20.08.23.일
+### 회의록 - 20.08.23.일
 - 두번째 회의 : 디자이너 영입, 자기소개 + 프로젝트 개요 및 기획 소개
 - 다음 회의 전까지 해야할 일 (다음 회의는 일요일 오후 10시)
   1. Flutter 개인 공부
   2. Github에 합의된 프로젝트 올리기. Min과 협의
 
+### 20.08.24.월
+#### 목표
+- 요즘 위에 있는 Navigation Bar는 잘 없다. 휴대폰이 커지면서 위까지 손이 잘 안 닿기 때문에, 모두 없에는 추세. 아래 Navigation Bar를 달아보자.
+#### 달성
+- 참고 사이트 : [Joseph Cherry' Blog- How to use Flutter to build an app with bottom navigation](https://willowtreeapps.com/ideas/how-to-use-flutter-to-build-an-app-with-bottom-navigation)
+- 생각보다 잘 작동한다. 마음먹으면 어떤 것이라도 쉽게 넣을 수 있다.
+- 이후에는 하단 네이게이션바에 햄버거 버튼을 달아봐야겠다.
 ---
