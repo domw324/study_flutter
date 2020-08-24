@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'codelabs_first_1.dart';
+
 class HandleNavigation extends StatelessWidget
 {
   @override
@@ -23,7 +25,7 @@ class _HomeState extends State<Home> {
   final List<Widget> _children = [
     PlaceholderWidget(Colors.white),
     PlaceholderWidget(Colors.deepOrange),
-    PlaceholderWidget(Colors.green)
+    RandomWords()
   ];
 
   Widget build(BuildContext context) {
