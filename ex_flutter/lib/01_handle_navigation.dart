@@ -19,29 +19,56 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  @override
+  int _currentIndex = 0;
+  final List<Widget> _children = [
+    PlaceholderWidget(Colors.white),
+    PlaceholderWidget(Colors.deepOrange),
+    PlaceholderWidget(Colors.green)
+  ];
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('My Flutter App'),
       ),
+      body: _children[_currentIndex], // new
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
+        onTap: onTabTapped, // new
+        currentIndex: _currentIndex, // new
         items: [
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.home),
-            title: new Text('Home'),
+          new BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            title: Text('Home'),
           ),
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.mail),
-            title: new Text('Messages'),
+          new BottomNavigationBarItem(
+            icon: Icon(Icons.mail),
+            title: Text('Messages'),
           ),
-          BottomNavigationBarItem(
-            icon: new Icon(Icons.person),
-            title: new Text('Profile'),
-          ),
+          new BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              title: Text('Profile')
+          )
         ],
       ),
+    );
+  }
+
+  void onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+}
+
+class PlaceholderWidget extends StatelessWidget {
+  final Color color;
+
+  PlaceholderWidget(this.color);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: color,
     );
   }
 }
