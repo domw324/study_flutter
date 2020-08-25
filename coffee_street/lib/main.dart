@@ -33,7 +33,7 @@ class _HomeMenuState extends State<MainMenu> {
     // 여기에 새로운 화면 추가
     PlaceholderWidget(Colors.deepPurple),
     PlaceholderWidget(Colors.deepOrange),
-    PlaceholderWidget(Colors.white), // Home
+    PlaceholderWidget(Colors.white), // TODO : Redirect to the Home
     PlaceholderWidget(Colors.greenAccent),
     PlaceholderWidget(Colors.black),
   ];
@@ -53,7 +53,7 @@ class _HomeMenuState extends State<MainMenu> {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.notifications),
-            onPressed: () {}, // TODO : Do right a redirect event
+            onPressed: () {}, // TODO : Do write a redirect event
             tooltip: 'Notifications',
           )
         ]
