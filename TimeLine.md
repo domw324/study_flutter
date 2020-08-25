@@ -106,4 +106,10 @@
 - 참고 사이트 : [Joseph Cherry' Blog- How to use Flutter to build an app with bottom navigation](https://willowtreeapps.com/ideas/how-to-use-flutter-to-build-an-app-with-bottom-navigation)
 - 생각보다 잘 작동한다. 마음먹으면 어떤 것이라도 쉽게 넣을 수 있다.
 - 이후에는 하단 네이게이션바에 햄버거 버튼을 달아봐야겠다.
+
+### 20.08.25.화
+#### 목표
+- 아는 지식을 활용해서 프로젝트 어플의 껍데기를 만들어보자
+#### 달성
+- 새로운 프로젝트 활용해서 MainHome 구현, 추후 각 페이지 작성 후 연결 필요
 ---
