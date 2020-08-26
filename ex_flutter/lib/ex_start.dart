@@ -1,9 +1,11 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import 'codelabs_first_1.dart';
 import '01_handle_navigation.dart';
 
-void main() => runApp(HandleNavigation());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -52,26 +54,96 @@ class MyApp extends StatelessWidget {
             ),
           )
         ),
-        body : CustomScrollView(
-          slivers: <Widget>[
-            SliverGrid(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, // 격자 수
-                mainAxisSpacing: 10.0, // 주축 간격
-                crossAxisSpacing: 10.0, // 교차 축 간격
-              ),
-              delegate: SliverChildBuilderDelegate(
-                (context,int index) => Container(
-                  color : Colors.yellowAccent,
-                  child: Center(
-                    child: Text("Item $index"),
+        body : GridView.builder(
+          padding: EdgeInsets.all(10.0),
+          itemCount: 10,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, // 격자 수
+            mainAxisSpacing: 10.0, // 주축 간격
+            crossAxisSpacing: 10.0, // 교차 축 간격
+          ),
+          itemBuilder: (BuildContext bc, int index) {
+            return GestureDetector(
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => MyApp2(),
+              )),
+              child: Card(
+                child: Container(
+                  color: Colors.red,
+                  child: Column(
+                    children: [
+                      Container(
+                        alignment: FractionalOffset(1.0, 0.5),
+                        height: 40.0,
+                        child: Icon(
+                          Icons.more_horiz,
+                        ),
+                        color: Colors.yellowAccent,
+                      ),
+                      Container(
+                        color: Colors.blue,
+                        width: 80.0,
+                        height: 80.0,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.pink,
+                            borderRadius: BorderRadius.circular(70.0),
+                            image: DecorationImage(
+                              image: NetworkImage("https://cdn.pixabay.com/photo/2020/06/01/07/16/pieris-rapae-5245438__340.jpg"),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: 40.0,
+                        color: Colors.purple,
+                        child: Text('이름 $index'),
+                      ),
+                      Container(
+                        height: 55.0,
+                        color: Colors.yellowAccent,
+                        alignment: FractionalOffset(1.0, 0.5),
+                        child: Row(
+                          children: [
+                            Icon(Icons.person),
+                            Icon(Icons.favorite),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                  childCount: 20
               ),
-            )
-          ],
+            );
+          },
         ),
+      ),
+    );
+  }
+}
+
+class MyApp2 extends StatefulWidget {
+  @override
+  _MyApp2State createState() => _MyApp2State();
+}
+
+class _MyApp2State extends State<MyApp2> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: ListView.builder(
+        itemCount: 10,
+        itemBuilder: (BuildContext context, int index) {
+          return ListTile(
+            onTap: () {},
+            leading: Icon(Icons.access_time),
+            title: Text('Title'),
+            subtitle: Text('Sub title'),
+            trailing: Icon(Icons.access_time),
+          );
+        }
       ),
     );
   }

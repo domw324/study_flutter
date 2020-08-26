@@ -30,7 +30,24 @@ class MainMenu extends StatefulWidget {
 class _HomeMenuState extends State<MainMenu> {
   int _curMenuIndex = 2;
   final List<Widget> _childMenuList = [
-    // 여기에 새로운 화면 추가
+    // TODO : 여기에 새로운 화면 추가
+//    Drawer(
+//        child: Scaffold(
+//          body: GridView.builder(
+//              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+//                crossAxisCount: 1,
+//                mainAxisSpacing: 10.0,
+//                crossAxisSpacing: 10.0,
+//              ),
+//              itemBuilder: (BuildContext bc, int index) {
+//                return GestureDetector(
+//                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+//                    builder: (context) => MyApp2(),
+//                  )),
+//                );
+//              }),
+//        )
+//    ),
     PlaceholderWidget(Colors.deepPurple),
     PlaceholderWidget(Colors.deepOrange),
     PlaceholderWidget(Colors.white), // TODO : Redirect to the Home
