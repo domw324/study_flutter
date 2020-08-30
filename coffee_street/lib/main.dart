@@ -88,7 +88,7 @@ class _HomeMenuState extends State<MainMenu> {
           ),
           new BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            title: Text('search'),
+            title: Text('Search'),
           ),
           new BottomNavigationBarItem(
             icon: Icon(Icons.home),
