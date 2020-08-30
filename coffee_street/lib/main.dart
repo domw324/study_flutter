@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'menu.dart';
+
 void main() => runApp(MainApp());
 
 class MainApp extends StatelessWidget {
@@ -31,25 +33,8 @@ class _HomeMenuState extends State<MainMenu> {
   int _curMenuIndex = 2;
   final List<Widget> _childMenuList = [
     // TODO : 여기에 새로운 화면 추가
-//    Drawer(
-//        child: Scaffold(
-//          body: GridView.builder(
-//              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-//                crossAxisCount: 1,
-//                mainAxisSpacing: 10.0,
-//                crossAxisSpacing: 10.0,
-//              ),
-//              itemBuilder: (BuildContext bc, int index) {
-//                return GestureDetector(
-//                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
-//                    builder: (context) => MyApp2(),
-//                  )),
-//                );
-//              }),
-//        )
-//    ),
-    PlaceholderWidget(Colors.deepPurple),
     PlaceholderWidget(Colors.deepOrange),
+    MenuWidget(),
     PlaceholderWidget(Colors.white), // TODO : Redirect to the Home
     PlaceholderWidget(Colors.greenAccent),
     PlaceholderWidget(Colors.black),
@@ -109,6 +94,7 @@ class _HomeMenuState extends State<MainMenu> {
         backgroundColor: Colors.brown,
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.grey,
+
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {}, // TODO : Do right a redirect event
