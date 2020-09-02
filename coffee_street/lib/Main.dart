@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'menu.dart';
+import 'Home.dart';
 
 void main() => runApp(MainApp());
 
@@ -32,15 +32,15 @@ class MainMenu extends StatefulWidget {
 class _HomeMenuState extends State<MainMenu> {
   int _curMenuIndex = 2;
   final List<Widget> _childMenuList = [
-    // TODO : 여기에 새로운 화면 추가
+    // TODO : Add new Widgets (functional screen)
     PlaceholderWidget(Colors.deepOrange),
-    MenuWidget(),
-    PlaceholderWidget(Colors.white), // TODO : Redirect to the Home
+    PlaceholderWidget(Colors.deepPurple),
+    HomePage(),
     PlaceholderWidget(Colors.greenAccent),
     PlaceholderWidget(Colors.black),
   ];
 
-  void onTabTapped(int index) {
+  void _OnTabTapped(int index) {
     setState(() {
       _curMenuIndex = index;
     });
@@ -55,14 +55,14 @@ class _HomeMenuState extends State<MainMenu> {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.notifications),
-            onPressed: () {}, // TODO : Do write a redirect event
+            onPressed: () { }, // TODO : Do write a redirect event
             tooltip: 'Notifications',
           )
         ]
       ),
       body: _childMenuList[_curMenuIndex],
       bottomNavigationBar: BottomNavigationBar(
-        onTap: onTabTapped,
+        onTap: _OnTabTapped,
         currentIndex: _curMenuIndex,
 
         // Set Items
@@ -97,7 +97,7 @@ class _HomeMenuState extends State<MainMenu> {
 
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {}, // TODO : Do right a redirect event
+        onPressed: () {}, // TODO : Do write a redirect event
         tooltip: 'My Cart',
         child: Icon(Icons.add_shopping_cart),
       ), // This trailing comma makes auto-formatting nicer for build methods.
