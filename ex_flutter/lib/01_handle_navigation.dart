@@ -63,7 +63,7 @@ class _HomeState extends State<Home> {
 }
 
 class PlaceholderWidget extends StatelessWidget {
-  final Color color;
+  final Color color; // StatelessWidget의 필드는 항상 final로 선언
 
   PlaceholderWidget(this.color);
 

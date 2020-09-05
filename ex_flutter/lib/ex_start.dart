@@ -4,8 +4,13 @@ import 'package:flutter/material.dart';
 
 import 'codelabs_first_1.dart';
 import '01_handle_navigation.dart';
+import '01_widget.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MaterialApp(
+  title: 'Flutter Example',
+  home: Counter(
+  ),
+));
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
