@@ -42,7 +42,7 @@ class ShoppingListItem extends StatelessWidget {
         backgroundColor: _getColor(context),
         child: Text(product.name[0]),
       ),
-      title: Text(product.name, style: _getTextStyle(context),),
+      title: Text(product.name, style: _getTextStyle(context)),
     );
   }
 }
@@ -52,6 +52,8 @@ class ShoppingList extends StatefulWidget {
 
   final List<Product> products;
 
+  // 프레임워크는 위젯이 tree에 위치가 주어지고 나타나는 처음 한 번 createState()함수를 호출.
+  // 만약 부모 위젯이 같은 위젯 유형(같은 key)을 사용하고 rebuild 하면, 프레임워크는 State 객체를 생성하는 대신에 재사용함.
   @override
   _ShoppingListState createState() => _ShoppingListState();
 }
@@ -61,6 +63,9 @@ class _ShoppingListState extends State<ShoppingList> {
 
   void _handleCartChanged(Product product, bool isInCart) {
     setState(() {
+      // setState() : 사용자가 카트 안의 무언가를 변경할 때 rebuild를 실행시키기 위한 메소드
+      // 메소드 안에서 _shoppingCart르,ㄹ 변경하는 동작 필요.
+      // 그 결과 프레임워크는 build를 호출, 앱의 visual appearance는 갱신
       if(isInCart)
         _shoppingCart.add(product);
       else
