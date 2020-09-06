@@ -153,7 +153,7 @@
     - 클래스/변수/함수 : 함수&클래스-파스칼, / 변수-카멜 / 클래스 안 멤버 변수&함수 - 앞에 `언더바(_)`
     - 함수 네이밍 법칙 : `동사 + 명사` / ex. `DoHomeWork()`
     - 테스트 클래스 네이밍 : 앞 함수 네이밍 법칙 + `Test`
-    - 들여쓰기 : `4 space`
+    - 들여쓰기 : ~~`4 space`~~ dart에서 `2 space`를 사용하도록 권장
     - 주석 : 자유롭게, 단 조금은 보기 좋게.. (TODO 잘 활용하면 좋음)
     - 가로 길이는 딱히 제한X, 적당히 보기 좋을 정도로.
     - [Effective Dart: Usage : Booleans](https://dart.dev/guides/language/effective-dart/usage#do-use--to-convert-null-to-a-boolean-value)
@@ -164,3 +164,12 @@
     - 함수형 프로그래밍...!?
     - 개발자 문서 전용 공간 만들자!
     - .gitignore 확인해서 넣은 후 올리자!
+    
+### 20.09.04.금
+- 기록
+    - 개발자 문서 공간은 [Coffee-Street/Document/wiki](https://github.com/Coffee-Street/Document/wiki)를 이용하자.
+
+### 20.09.05.토
+- 기록
+    - Widget 사용, Widget간 반응을 조금 더 익히기
+    - [Flutter로 개발하기(01) - 위젯 소개](https://bsscco.github.io/posts/flutter-introduction-to-widgets/)
