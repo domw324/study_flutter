@@ -174,6 +174,10 @@
     - Widget 사용, Widget간 반응을 조금 더 익히기
     - [Flutter로 개발하기(01) - 위젯 소개](https://bsscco.github.io/posts/flutter-introduction-to-widgets/)
 
+---
+
+## 3주차
+
 ### 20.09.06.일
 **회의록**
 - 기록
@@ -185,9 +189,6 @@
     - Flutter Unit Test 작성법 
     - Login API 설계 및 구현 (With. Ledger)
     - Widget 조작 연습
----
-
-## 3주차
 ### 20.09.07.월
 - 목표
     - 테스트코드 작성 방법
