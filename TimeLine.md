@@ -173,3 +173,26 @@
 - 기록
     - Widget 사용, Widget간 반응을 조금 더 익히기
     - [Flutter로 개발하기(01) - 위젯 소개](https://bsscco.github.io/posts/flutter-introduction-to-widgets/)
+
+### 20.09.06.일
+**회의록**
+- 기록
+    - 어느 정도 로그인과 알람기능의 틀이 잡혔다
+    - 이제 슬슬 개발을 시작해야할 단계.
+    - Min은 BLoC 패턴과 프론트엔드 CI/CD 쪽을 조금 더 연구, 내가 login 개발과 unit test 코드 공부
+- 다음 주간 할일
+    - Git Flow 문서 이동
+    - Flutter Unit Test 작성법 
+    - Login API 설계 및 구현 (With. Ledger)
+    - Widget 조작 연습
+---
+
+## 3주차
+### 20.09.07.월
+- 목표
+    - 테스트코드 작성 방법
+- 기록
+    - 참고링크 : [Flutter - Test Code](https://flutter-ko.dev/docs/cookbook/testing/unit/introduction) , [Flutter - 유닛 테스트 해보기](https://software-creator.tistory.com/21)
+    - 단위테스트 대상 클래스는 `.\lib\` 하위에, 단위테스트 파일은 `.\test\` 하위에 생성한다.
+    - flutter Unit Test는 `import 'package:test/test.dart';`를 상속 받고, `expect(variable, expected value)` 코드를 통해 결과값과의 일치여부를 판단한다.
+    - `IntelliJ` 혹은 `VSCode`로 테스트를 수행할 수 있으며, `terminel`에서도 테스트를 실행시킬 수 있다.
