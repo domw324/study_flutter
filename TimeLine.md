@@ -195,5 +195,8 @@
 - 기록
     - 참고링크 : [Flutter - Test Code](https://flutter-ko.dev/docs/cookbook/testing/unit/introduction) , [Flutter - 유닛 테스트 해보기](https://software-creator.tistory.com/21)
     - 단위테스트 대상 클래스는 `.\lib\` 하위에, 단위테스트 파일은 `.\test\` 하위에 생성한다.
+        - 이 때 테스트 파일은 항상 `test`로 끝나야 한다.
     - flutter Unit Test는 `import 'package:test/test.dart';`를 상속 받고, `expect(variable, expected value)` 코드를 통해 결과값과의 일치여부를 판단한다.
     - `IntelliJ` 혹은 `VSCode`로 테스트를 수행할 수 있으며, `terminel`에서도 테스트를 실행시킬 수 있다.
+- 참고자료
+    - flutter 비동기 실행처리 : [Dart 언어 Future 알아보기](https://beomseok95.tistory.com/309)
