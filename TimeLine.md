@@ -200,3 +200,13 @@
     - `IntelliJ` 혹은 `VSCode`로 테스트를 수행할 수 있으며, `terminel`에서도 테스트를 실행시킬 수 있다.
 - 참고자료
     - flutter 비동기 실행처리 : [Dart 언어 Future 알아보기](https://beomseok95.tistory.com/309)
+
+### 20.09.09.수
+- 목표
+    - Layout과 Widget 더 잘 다루기
+- 기록
+    - 링크 : [lutter로 개발하기(03) - 레이아웃 튜토리얼](https://bsscco.github.io/posts/flutter-layout-tutorial/)
+    - 이미지 사용
+        1. 최상위 하위에 폴더를 생성 및 파일 삽입한다.
+        2. 바로 경로로 사용하지 않는다. `pubspec.yaml`의 `flutter: assets: - image_path` 로 경로를 선언해준다.
+        3. 이후 `image.assert(image_path)`를 통해 사용한다.

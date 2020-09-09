@@ -77,7 +77,7 @@ class ExLayoutTutorial extends StatelessWidget {
 //        body: Column(
         body: ListView( // Column과 다르게 ListView는 Contents가 많아질 때 Scroll이 된다.
           children : <Widget>[
-            Image.asset( // pubsec.yaml>flutter:assets: 이미지의 경로 등록 후 image.assert으로 사용
+            Image.asset( // pubspec.yaml>flutter:assets: 이미지의 경로 등록 후 image.assert으로 사용
               'img/lake.jpg',
               width: 600,
               height: 240,
