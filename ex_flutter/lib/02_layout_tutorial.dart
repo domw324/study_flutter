@@ -62,7 +62,8 @@ class ExLayoutTutorial extends StatelessWidget {
             'larger Alpine Lakes. A gondola ride from Kandersteg, followed by a '
             'half-hour walk through pastures and pine forest, leads you to the '
             'lake, which warms to 20 degrees Celsius in the summer. Activities '
-            'enjoyed here include rowing, and riding the summer toboggan run.',
+            'enjoyed here include rowing, and riding the summer toboggan run.'
+        ,
         softWrap: true,
       ),
     );
@@ -73,9 +74,10 @@ class ExLayoutTutorial extends StatelessWidget {
         appBar: AppBar(
           title: Text('Flutter layout tutorial'),
         ),
-        body: Column(
+//        body: Column(
+        body: ListView( // Column과 다르게 ListView는 Contents가 많아질 때 Scroll이 된다.
           children : <Widget>[
-            Image.asset(
+            Image.asset( // pubsec.yaml>flutter:assets: 이미지의 경로 등록 후 image.assert으로 사용
               'img/lake.jpg',
               width: 600,
               height: 240,
