@@ -146,17 +146,17 @@
 
 ### 20.09.02.수
 **회의록**
-- 코드 컨벤션
-    - 디렉토리 경로 : `소문자로만 표시`
-    - 파일 : `파스칼`. 앱에서는 외부 모듈을 따로 나눌일이 별로 없을 듯? 혹은 적을 듯.
-    - 괄호 : `K&R`. 에디터를 따르자.
-    - 클래스/변수/함수 : 함수&클래스-파스칼, / 변수-카멜 / 클래스 안 멤버 변수&함수 - 앞에 `언더바(_)`
-    - 함수 네이밍 법칙 : `동사 + 명사` / ex. `DoHomeWork()`
-    - 테스트 클래스 네이밍 : 앞 함수 네이밍 법칙 + `Test`
-    - 들여쓰기 : ~~`4 space`~~ dart에서 `2 space`를 사용하도록 권장
-    - 주석 : 자유롭게, 단 조금은 보기 좋게.. (TODO 잘 활용하면 좋음)
-    - 가로 길이는 딱히 제한X, 적당히 보기 좋을 정도로.
-    - [Effective Dart: Usage : Booleans](https://dart.dev/guides/language/effective-dart/usage#do-use--to-convert-null-to-a-boolean-value)
+#### 코드 컨벤션
+- 디렉토리 경로 : `소문자로만 표시`
+- 파일 : `파스칼`. 앱에서는 외부 모듈을 따로 나눌일이 별로 없을 듯? 혹은 적을 듯.
+- 괄호 : `K&R`. 에디터를 따르자.
+- 클래스/변수/함수 : 함수&클래스-파스칼, / 변수-카멜 / 클래스 안 멤버 변수&함수 - 앞에 `언더바(_)`
+- 함수 네이밍 법칙 : `동사 + 명사` / ex. `DoHomeWork()`
+- 테스트 클래스 네이밍 : 앞 함수 네이밍 법칙 + `Test`
+- 들여쓰기 : ~~`4 space`~~ dart에서 `2 space`를 사용하도록 권장
+- 주석 : 자유롭게, 단 조금은 보기 좋게.. (TODO 잘 활용하면 좋음)
+- 가로 길이는 딱히 제한X, 적당히 보기 좋을 정도로.
+- [Effective Dart: Usage : Booleans](https://dart.dev/guides/language/effective-dart/usage#do-use--to-convert-null-to-a-boolean-value)
         - optional pointer 가 null exception 인 경우 true false로 변환
 - 숙제?
     - flutter 개발패턴 정리해서 다시 얘기
@@ -166,13 +166,13 @@
     - .gitignore 확인해서 넣은 후 올리자!
     
 ### 20.09.04.금
-- 기록
-    - 개발자 문서 공간은 [Coffee-Street/Document/wiki](https://github.com/Coffee-Street/Document/wiki)를 이용하자.
+#### 기록
+- 개발자 문서 공간은 [Coffee-Street/Document/wiki](https://github.com/Coffee-Street/Document/wiki)를 이용하자.
 
 ### 20.09.05.토
-- 기록
-    - Widget 사용, Widget간 반응을 조금 더 익히기
-    - [Flutter로 개발하기(01) - 위젯 소개](https://bsscco.github.io/posts/flutter-introduction-to-widgets/)
+#### 기록
+- Widget 사용, Widget간 반응을 조금 더 익히기
+- [Flutter로 개발하기(01) - 위젯 소개](https://bsscco.github.io/posts/flutter-introduction-to-widgets/)
 
 ---
 
@@ -180,33 +180,53 @@
 
 ### 20.09.06.일
 **회의록**
-- 기록
-    - 어느 정도 로그인과 알람기능의 틀이 잡혔다
-    - 이제 슬슬 개발을 시작해야할 단계.
-    - Min은 BLoC 패턴과 프론트엔드 CI/CD 쪽을 조금 더 연구, 내가 login 개발과 unit test 코드 공부
+#### 기록
+- 어느 정도 로그인과 알람기능의 틀이 잡혔다
+- 이제 슬슬 개발을 시작해야할 단계.
+- Min은 BLoC 패턴과 프론트엔드 CI/CD 쪽을 조금 더 연구, 내가 login 개발과 unit test 코드 공부
 - 다음 주간 할일
     - Git Flow 문서 이동
     - Flutter Unit Test 작성법 
     - Login API 설계 및 구현 (With. Ledger)
     - Widget 조작 연습
+
 ### 20.09.07.월
-- 목표
-    - 테스트코드 작성 방법
-- 기록
-    - 참고링크 : [Flutter - Test Code](https://flutter-ko.dev/docs/cookbook/testing/unit/introduction) , [Flutter - 유닛 테스트 해보기](https://software-creator.tistory.com/21)
-    - 단위테스트 대상 클래스는 `.\lib\` 하위에, 단위테스트 파일은 `.\test\` 하위에 생성한다.
-        - 이 때 테스트 파일은 항상 `test`로 끝나야 한다.
-    - flutter Unit Test는 `import 'package:test/test.dart';`를 상속 받고, `expect(variable, expected value)` 코드를 통해 결과값과의 일치여부를 판단한다.
-    - `IntelliJ` 혹은 `VSCode`로 테스트를 수행할 수 있으며, `terminel`에서도 테스트를 실행시킬 수 있다.
+#### 목표
+- 테스트코드 작성 방법
+#### 기록
+- 참고링크 : [Flutter - Test Code](https://flutter-ko.dev/docs/cookbook/testing/unit/introduction) , [Flutter - 유닛 테스트 해보기](https://software-creator.tistory.com/21)
+- 단위테스트 대상 클래스는 `.\lib\` 하위에, 단위테스트 파일은 `.\test\` 하위에 생성한다.
+    - 이 때 테스트 파일은 항상 `test`로 끝나야 한다.
+- flutter Unit Test는 `import 'package:test/test.dart';`를 상속 받고, `expect(variable, expected value)` 코드를 통해 결과값과의 일치여부를 판단한다.
+- `IntelliJ` 혹은 `VSCode`로 테스트를 수행할 수 있으며, `terminel`에서도 테스트를 실행시킬 수 있다.
 - 참고자료
     - flutter 비동기 실행처리 : [Dart 언어 Future 알아보기](https://beomseok95.tistory.com/309)
 
 ### 20.09.09.수
-- 목표
-    - Layout과 Widget 더 잘 다루기
-- 기록
-    - 링크 : [lutter로 개발하기(03) - 레이아웃 튜토리얼](https://bsscco.github.io/posts/flutter-layout-tutorial/)
-    - 이미지 사용
-        1. 최상위 하위에 폴더를 생성 및 파일 삽입한다.
-        2. 바로 경로로 사용하지 않는다. `pubspec.yaml`의 `flutter: assets: - image_path` 로 경로를 선언해준다.
-        3. 이후 `image.assert(image_path)`를 통해 사용한다.
+#### 목표
+- Layout과 Widget 더 잘 다루기
+#### 기록
+- 링크 : [lutter로 개발하기(03) - 레이아웃 튜토리얼](https://bsscco.github.io/posts/flutter-layout-tutorial/)
+- 이미지 사용
+    1. 최상위 하위에 폴더를 생성 및 파일 삽입한다.
+    2. 바로 경로로 사용하지 않는다. `pubspec.yaml`의 `flutter: assets: - image_path` 로 경로를 선언해준다.
+    3. 이후 `image.assert(image_path)`를 통해 사용한다.
+
+### 20.09.10.목
+#### 목표
+- 위젯 조금 더 알아보기
+- redirect 연습하기
+#### 기록
+- [위젯의 크기 제약조건](https://bsscco.github.io/posts/flutter-dealing-with-box-constraints/)
+    1. 렌더박스와 제약조건
+        - 위젯은 자신의 렌더박스에 그려지고, 그 렌더박스의 크기는 부모 위젯이 정해준 제약조건에 의해 결정된다.
+        - 제약조건은 최소/최대 너비/높이로 구성된다.
+    2. 제약조건의 유형
+        - 가능한 큰 크기 : `Center`, `ListView`
+        - 자식 위젯 크기 : `Transform`, `Opacity`
+        - 특정 값으로 결정 : `Image`, `Text`
+    3. 한정되지 않은 제약조건
+        - `ListView` 형식은 crossAxis 방향으로 크기를 확장하려는 제약조건을 가진다.
+    4. Flex
+        - Bounded Flex : 자신의 mainAxis 방향으로 가능한 크게 확장
+        - Unbounded Flex : 자식 위젯들의 크기에 맞춰 변경
