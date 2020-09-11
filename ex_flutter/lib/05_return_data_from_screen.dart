@@ -31,15 +31,16 @@ class SelectionButton extends StatelessWidget {
     );
   }
 
-  _navigateAndDisplaySelection(BuildContext context) async {
+  _navigateAndDisplaySelection(BuildContext context) async { // 비동기 실행
+    // result 는 SelectionScreen()에서 보내주는 값이 전달 될때까지 기다린다.
     final result = await Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => SelectionScreen()),
     );
 
     Scaffold.of(context)
-      ..removeCurrentSnackBar()
-      ..showSnackBar(SnackBar(content: Text("$result")));
+    ..removeCurrentSnackBar()
+    ..showSnackBar(SnackBar(content: Text("$result")));
   }
 }
 
