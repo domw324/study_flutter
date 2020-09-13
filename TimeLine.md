@@ -231,10 +231,14 @@
         - Bounded Flex : 자신의 mainAxis 방향으로 가능한 크게 확장
         - Unbounded Flex : 자식 위젯들의 크기에 맞춰 변경
 
-### 20.09.11.금
+### 20.09.12.토
 #### 기록
 - [새로운 화면 열기](https://bsscco.github.io/posts/flutter-navigate-to-a-new-screen-and-back/)
 - [새 화면에 데이터 넘기기](https://bsscco.github.io/posts/flutter-send-data-to-a-new-screen/)
 - [닫히는 화면에서 데이터 받기](https://bsscco.github.io/posts/flutter-return-data-from-a-screen/)
 - [Named Route로 Widget 관리하기](https://bsscco.github.io/posts/flutter-navigate-with-named-routes/)
 - [화면전환 애니메이션](https://bsscco.github.io/posts/flutter-animating-a-widget-across-screens/)
+
+### 20.09.13.일
+#### 기록
+- Login 화면 껍데기 만드는 중.. 흑흑 어렵다
