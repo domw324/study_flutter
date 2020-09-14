@@ -255,3 +255,9 @@
     - Flutter 스터디 - StatefulWidget 중점으로
     - 홈, 알람 UI 및 동작 구현
     - Flutter BLoC 패턴 스터디 (With. Min)
+
+### 20.09.14.월
+- 기록
+    - Color pack 작성 완료
+        - ColorPack, Theme 분리
+        - 참고 : [Flutter: Custom theme data - mikemimik](https://gist.github.com/mikemimik/5ac2fa98fe6d132098603c1bd40263d5)
