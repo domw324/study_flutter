@@ -261,3 +261,8 @@
     - Color pack 작성 완료
         - ColorPack, Theme 분리
         - 참고 : [Flutter: Custom theme data - mikemimik](https://gist.github.com/mikemimik/5ac2fa98fe6d132098603c1bd40263d5)
+
+### 20.09.15.수
+- 기록
+    - 참고 : [Sliver와 제스처](https://bsscco.github.io/posts/flutter-slivers/)
+    - 사라지는 반응성 appbar 적용 연습.. 근데 잘 안됨.. MaterialApp, Scaffold, Expand 등 Widget간의 문제인 것 같다..
