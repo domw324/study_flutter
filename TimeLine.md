@@ -266,3 +266,9 @@
 - 기록
     - 참고 : [Sliver와 제스처](https://bsscco.github.io/posts/flutter-slivers/)
     - 사라지는 반응성 appbar 적용 연습.. 근데 잘 안됨.. MaterialApp, Scaffold, Expand 등 Widget간의 문제인 것 같다..
+
+---
+
+### 20.09.21.월
+- 기록
+    - BloC 패턴 읽어보기
