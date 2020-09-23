@@ -272,3 +272,14 @@
 ### 20.09.21.월
 - 기록
     - BloC 패턴 읽어보기
+
+### 20.09.23.수
+**개발자 회의 기록**
+- BloC 패턴
+    -  적용하기 좋음. 비교적 최근 라이브러리라 사용하기도 편할 듯.
+- RestAPI?
+    - 진짜 제대로 RestAPI의 규격을 따를것이 아니라면, 굳이 Rest라는 이름을 붙일필요?
+    - JSON-RPC가 최신 기술 스택으로 보인다.
+- CI/CD
+    - flutter Linter
+        - 참고 : [Flutter Linter - effective_dart 적용하기](https://velog.io/@adbr/flutter-flutter-linter-package-effectivedart)
