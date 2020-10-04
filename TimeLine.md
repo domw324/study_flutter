@@ -283,3 +283,11 @@
 - CI/CD
     - flutter Linter
         - 참고 : [Flutter Linter - effective_dart 적용하기](https://velog.io/@adbr/flutter-flutter-linter-package-effectivedart)
+
+---
+
+## 6주차
+
+### 20.10.04.일
+**회의 기록**
+- 백엔드 CI/CD 세팅 끝남.
