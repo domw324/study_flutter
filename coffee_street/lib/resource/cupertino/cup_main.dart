@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:splashscreen/splashscreen.dart';
 
 import 'cup_app.dart';
 import 'model/cup_app_state_model.dart';
