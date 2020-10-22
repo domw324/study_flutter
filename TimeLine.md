@@ -307,3 +307,15 @@
 
 ### 20.10.21.수
 - [아이콘 추가하기 링크](https://medium.com/@changjoopark/flutter-%EC%95%84%EC%9D%B4%EC%BD%98-%EB%B0%94%EA%BE%B8%EA%B8%B0-910a4bc642a9)
+
+### 20.10.22.목
+#### `BLoc` vs `Provider` 비교 (ref: [Flutter - Provider 패턴에 대해서 알아보자](https://software-creator.tistory.com/26))
+- Bloc 패턴
+  - UI와 비즈니스 로직(데이터 처리 로직)을 분리하는 방식
+  - 코드가 한 클래스에 너무 몰리는 문제를 해결하기 위해서 등장
+- Provider 패턴
+  - 데이터 공유나 로직의 분리를 Bloc에 비해 좀 더 간단히 할 수 있음.
+  - 관심사 분리
+  - 데이터 공유
+  - 간결한 코드
+- 구글에서는 중규모 프로젝트는 Provider 패턴을, 대규모 프로젝트는 Bloc 패턴을 추천
