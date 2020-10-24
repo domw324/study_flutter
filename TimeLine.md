@@ -319,3 +319,6 @@
   - 데이터 공유
   - 간결한 코드
 - 구글에서는 중규모 프로젝트는 Provider 패턴을, 대규모 프로젝트는 Bloc 패턴을 추천
+
+### 20.10.24.토
+- [Flutter용 Metrial Motion으로 고급 전환 만들기](https://codelabs.developers.google.com/codelabs/material-motion-flutter?hl=en#10)
