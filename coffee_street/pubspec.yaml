@@ -30,8 +30,11 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
   intl: ^0.16.1
-  provider: ^4.1.3   # new
+  provider: ^4.3.2   # new
   shrine_images: ^1.0.0
+  animations: ^1.1.2  # transition
+  google_fonts: ^1.1.0  # transition
+  flutter_gallery_assets: ^0.2.6  # transition
 
 dev_dependencies:
   flutter_test:
@@ -121,3 +124,36 @@ flutter:
     - packages/shrine_images/35-0.jpg
     - packages/shrine_images/36-0.jpg
     - packages/shrine_images/37-0.jpg
+    - packages/flutter_gallery_assets/fonts/google_fonts/WorkSans-Regular.ttf # transition
+    - packages/flutter_gallery_assets/fonts/google_fonts/WorkSans-Medium.ttf
+    - packages/flutter_gallery_assets/fonts/google_fonts/WorkSans-Bold.ttf
+    - packages/flutter_gallery_assets/fonts/google_fonts/WorkSans-Thin.ttf
+    - packages/flutter_gallery_assets/fonts/google_fonts/WorkSans-SemiBold.ttf
+    - packages/flutter_gallery_assets/reply/attachments/paris_1.jpg
+    - packages/flutter_gallery_assets/reply/attachments/paris_2.jpg
+    - packages/flutter_gallery_assets/reply/attachments/paris_3.jpg
+    - packages/flutter_gallery_assets/reply/attachments/paris_4.jpg
+    - packages/flutter_gallery_assets/reply/avatars/avatar_0.jpg
+    - packages/flutter_gallery_assets/reply/avatars/avatar_1.jpg
+    - packages/flutter_gallery_assets/reply/avatars/avatar_2.jpg
+    - packages/flutter_gallery_assets/reply/avatars/avatar_3.jpg
+    - packages/flutter_gallery_assets/reply/avatars/avatar_4.jpg
+    - packages/flutter_gallery_assets/reply/avatars/avatar_5.jpg
+    - packages/flutter_gallery_assets/reply/avatars/avatar_6.jpg
+    - packages/flutter_gallery_assets/reply/avatars/avatar_7.jpg
+    - packages/flutter_gallery_assets/reply/avatars/avatar_8.jpg
+    - packages/flutter_gallery_assets/reply/avatars/avatar_9.jpg
+    - packages/flutter_gallery_assets/reply/avatars/avatar_10.jpg
+    - packages/flutter_gallery_assets/reply/avatars/avatar_express.png
+    - packages/flutter_gallery_assets/reply/icons/twotone_add_circle_outline.png
+    - packages/flutter_gallery_assets/reply/icons/twotone_delete.png
+    - packages/flutter_gallery_assets/reply/icons/twotone_drafts.png
+    - packages/flutter_gallery_assets/reply/icons/twotone_error.png
+    - packages/flutter_gallery_assets/reply/icons/twotone_folder.png
+    - packages/flutter_gallery_assets/reply/icons/twotone_forward.png
+    - packages/flutter_gallery_assets/reply/icons/twotone_inbox.png
+    - packages/flutter_gallery_assets/reply/icons/twotone_send.png
+    - packages/flutter_gallery_assets/reply/icons/twotone_star_on_background.png
+    - packages/flutter_gallery_assets/reply/icons/twotone_star.png
+    - packages/flutter_gallery_assets/reply/icons/twotone_stars.png
+    - packages/flutter_gallery_assets/reply/reply_logo.png
