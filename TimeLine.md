@@ -305,8 +305,10 @@
 - Icon을 직접 지정하려면 그냥 이미지로 붙이는 형식으로는 불가.
 - Image를 Icon pack으로 변환시켜 넣어줘야 한다.
 
+---
+
 ### 20.10.21.수
-- [아이콘 추가하기 링크](https://medium.com/@changjoopark/flutter-%EC%95%84%EC%9D%B4%EC%BD%98-%EB%B0%94%EA%BE%B8%EA%B8%B0-910a4bc642a9)
+- [아이콘 추가하기](https://medium.com/@changjoopark/flutter-%EC%95%84%EC%9D%B4%EC%BD%98-%EB%B0%94%EA%BE%B8%EA%B8%B0-910a4bc642a9)
 
 ### 20.10.22.목
 #### `BLoc` vs `Provider` 비교 (ref: [Flutter - Provider 패턴에 대해서 알아보자](https://software-creator.tistory.com/26))
@@ -322,3 +324,6 @@
 
 ### 20.10.24.토
 - [Flutter용 Metrial Motion으로 고급 전환 만들기](https://codelabs.developers.google.com/codelabs/material-motion-flutter?hl=en#10)
+
+### 20.11.02.월
+- SpringBoot 연결
