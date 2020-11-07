@@ -12,44 +12,47 @@
         - 모바일 스크린의 크기 변화로 인해 상단 네이게이션 바는 없에는 추세. 하단 Navigation Bar를 달아보는 시도
         - 참고 사이트 : [Joseph Cherry' Blog- How to use Flutter to build an app with bottom navigation](https://willowtreeapps.com/ideas/how-to-use-flutter-to-build-an-app-with-bottom-navigation)
         - 연습용 MainHome 구현 및 추가 페이지 연결/이동 방법 학습
-    2. Layout, Container 등
+    2. Widget - Layout, Container 등
         - Layout Tutorial            
             - [Flutter로 개발하기(03) - 레이아웃 튜토리얼](https://bsscco.github.io/posts/flutter-layout-tutorial/)
         - Flutter의 Layout과 Container
-            - 참고 사이트 : [Flutter로 개발하기(27) - 레이아웃 위젯 목록](https://bsscco.github.io/posts/flutter-layout-widgets/)
-        - Widget 사용, Widget간 반응
+            - [Flutter로 개발하기(27) - 레이아웃 위젯 목록](https://bsscco.github.io/posts/flutter-layout-widgets/)
             - [Flutter로 개발하기(01) - 위젯 소개](https://bsscco.github.io/posts/flutter-introduction-to-widgets/)
-            - [새로운 화면 열기](https://bsscco.github.io/posts/flutter-navigate-to-a-new-screen-and-back/)
-            - [새 화면에 데이터 넘기기](https://bsscco.github.io/posts/flutter-send-data-to-a-new-screen/)
-            - [닫히는 화면에서 데이터 받기](https://bsscco.github.io/posts/flutter-return-data-from-a-screen/)
-            - [Named Route로 Widget 관리하기](https://bsscco.github.io/posts/flutter-navigate-with-named-routes/)
-            - [화면전환 애니메이션](https://bsscco.github.io/posts/flutter-animating-a-widget-across-screens/)
-    3. Widget 심화
-        - [위젯의 크기 제약조건](https://bsscco.github.io/posts/flutter-dealing-with-box-constraints/)
-            - 위젯의 크기가 벗어나는 경우 렌더링이 불가능해 빌드가 되지 않는 현상 발생.
-            - ```markdown
-                1. 렌더박스와 제약조건
-                    - 위젯은 자신의 렌더박스에 그려지고, 그 렌더박스의 크기는 부모 위젯이 정해준 제약조건에 의해 결정된다.
-                    - 제약조건은 최소/최대 너비/높이로 구성된다.
-                2. 제약조건의 유형
-                    - 가능한 큰 크기 : `Center`, `ListView`
-                    - 자식 위젯 크기 : `Transform`, `Opacity`
-                    - 특정 값으로 결정 : `Image`, `Text`
-                3. 한정되지 않은 제약조건
-                    - `ListView` 형식은 crossAxis 방향으로 크기를 확장하려는 제약조건을 가진다.
-                4. Flex
-                    - Bounded Flex : 자신의 mainAxis 방향으로 가능한 크게 확장
-                    - Unbounded Flex : 자식 위젯들의 크기에 맞춰 변경
-              ```
-        - Sliver Widget
-            - Sliver Widget 사용 시, 현재 스크린 조작에 따라 더 반응성 좋은 Widget을 활용할 수 있음.
-            - [Sliver와 제스처](https://bsscco.github.io/posts/flutter-slivers/)
+    3. Widget간 반응 및 애니메이션
+        - [새로운 화면 열기](https://bsscco.github.io/posts/flutter-navigate-to-a-new-screen-and-back/)
+        - [새 화면에 데이터 넘기기](https://bsscco.github.io/posts/flutter-send-data-to-a-new-screen/)
+        - [닫히는 화면에서 데이터 받기](https://bsscco.github.io/posts/flutter-return-data-from-a-screen/)
+        - [Named Route로 Widget 관리하기](https://bsscco.github.io/posts/flutter-navigate-with-named-routes/)
+        - [화면전환 애니메이션](https://bsscco.github.io/posts/flutter-animating-a-widget-across-screens/)
+4. Widget 심화
+    1. Sliver Widget
+        - Sliver Widget 사용 시, 현재 스크린 조작에 따라 더 반응성 좋은 Widget을 활용할 수 있음.
+        - [Sliver와 제스처](https://bsscco.github.io/posts/flutter-slivers/)
+    2. [위젯의 크기 제약조건](https://bsscco.github.io/posts/flutter-dealing-with-box-constraints/)
+        - 위젯의 크기가 벗어나는 경우 렌더링이 불가능해 빌드가 되지 않는 현상 발생.
+        - ```markdown
+            1. 렌더박스와 제약조건
+                - 위젯은 자신의 렌더박스에 그려지고, 그 렌더박스의 크기는 부모 위젯이 정해준 제약조건에 의해 결정된다.
+                - 제약조건은 최소/최대 너비/높이로 구성된다.
+            2. 제약조건의 유형
+                - 가능한 큰 크기 : `Center`, `ListView`
+                - 자식 위젯 크기 : `Transform`, `Opacity`
+                - 특정 값으로 결정 : `Image`, `Text`
+            3. 한정되지 않은 제약조건
+                - `ListView` 형식은 crossAxis 방향으로 크기를 확장하려는 제약조건을 가진다.
+            4. Flex
+                - Bounded Flex : 자신의 mainAxis 방향으로 가능한 크게 확장
+                - Unbounded Flex : 자식 위젯들의 크기에 맞춰 변경
+          ```
 4. Asset
     - 이미지
         1. 최상위 하위에 폴더를 생성 및 파일 삽입
         2. 바로 경로로 사용하지 않는다. `pubspec.yaml`의 `flutter: assets: - image_path` 로 경로를 선언
         3. 이후 `image.assert(image_path)`를 통해 사용
     - 아이콘
+        - Flutter에서는 사용자가 직접 icon pack?을 제작하여 사용할 수 있다.
+            - [How to use custom icons in Flutter](https://medium.com/codechai/how-to-use-custom-icons-in-flutter-834a079d977)
+    - 앱 로고 변경 (사용자 모바일 디바이스의 홈에 표시되는 실행 아이콘)
         - [아이콘 추가하기](https://medium.com/@changjoopark/flutter-%EC%95%84%EC%9D%B4%EC%BD%98-%EB%B0%94%EA%BE%B8%EA%B8%B0-910a4bc642a9)
 5. Theme
     - Color pack
@@ -77,15 +80,17 @@
 1. GraphQL 기본 개념 파악
     - [GraphQL 개념잡기 - kakao Tech](https://tech.kakao.com/2019/08/01/graphql-basic/)
 2. `BLoc` vs `Provider` 비교
-  - Bloc 패턴
-    - UI와 비즈니스 로직(데이터 처리 로직)을 분리하는 방식
-    - 코드가 한 클래스에 너무 몰리는 문제를 해결하기 위해서 등장
-  - Provider 패턴
-    - 데이터 공유나 로직의 분리를 Bloc에 비해 좀 더 간단히 할 수 있음.
-    - 관심사 분리
-    - 데이터 공유
-    - 간결한 코드
-  - 구글에서는 중규모 프로젝트는 Provider 패턴을, 대규모 프로젝트는 Bloc 패턴을 추천
+  - ```markdown
+      - Bloc 패턴
+        - UI와 비즈니스 로직(데이터 처리 로직)을 분리하는 방식
+        - 코드가 한 클래스에 너무 몰리는 문제를 해결하기 위해서 등장
+      - Provider 패턴
+        - 데이터 공유나 로직의 분리를 Bloc에 비해 좀 더 간단히 할 수 있음.
+        - 관심사 분리
+        - 데이터 공유
+        - 간결한 코드
+      - 구글에서는 중규모 프로젝트는 Provider 패턴을, 대규모 프로젝트는 Bloc 패턴을 추천
+    ```
   - 읽기 좋은 자료 : [Flutter - Provider 패턴에 대해서 알아보자](https://software-creator.tistory.com/26)
 
 ## 3. Document
