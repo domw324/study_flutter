@@ -157,3 +157,4 @@ flutter:
     - packages/flutter_gallery_assets/reply/icons/twotone_star.png
     - packages/flutter_gallery_assets/reply/icons/twotone_stars.png
     - packages/flutter_gallery_assets/reply/reply_logo.png
+    - assets/splash_logo.png
