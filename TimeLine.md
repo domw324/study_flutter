@@ -332,3 +332,11 @@
 
 ### 20.11.07.토
 - 한 일들 정리 하기
+
+---
+
+## N+1주차
+
+### 21.01.11.월
+- Restrofit을 활용한 Rest API 엔드포인트 따기 실습
+  - Link : [코드팩토리 - Rest API 엔드포인트 따느라 삽질 하셨나요? 제가 도와드릴게요 Retrofit!](https://www.youtube.com/watch?app=desktop&v=GNc20BkoA2w&feature=youtu.be&fbclid=IwAR0Nt1wsksuMIxQdHHyPUDq78p1SkzetW9FOypr5DbBoGI4WXZefU3EdsWI)
