@@ -340,3 +340,26 @@
 ### 21.01.11.월
 - Restrofit을 활용한 Rest API 엔드포인트 따기 실습
   - Link : [코드팩토리 - Rest API 엔드포인트 따느라 삽질 하셨나요? 제가 도와드릴게요 Retrofit!](https://www.youtube.com/watch?app=desktop&v=GNc20BkoA2w&feature=youtu.be&fbclid=IwAR0Nt1wsksuMIxQdHHyPUDq78p1SkzetW9FOypr5DbBoGI4WXZefU3EdsWI)
+
+### 21.01.12.화
+- Restrofit 적용하기
+  - 일단 Restrofit을 사용하기 위해서 아래와 같이 작성해줘야 한다.
+    ``` dart
+    # dart ver. = 2.9.0
+
+    # pubspec.yaml
+
+    dependencies:
+      # Restrofit for RestAPI
+      retrofit: ^1.3.4+1
+      dio: ^3.0.1
+
+    dev_dependencies:
+      # Restrofit for RestAPI
+      retrofit_generator: ^1.4.1+1
+      build_runner: ^1.10.0
+      json_serializable: ^3.5.1
+    ```
+    - Dart 버전을 `2.9.0`을 쓰고 있기 때문에 build_runner 버전은 `^1.10.0` 사용.  
+      혹시 다른 Dart 버전이라면 bluild_runner 버전도 다른 것을 써야할 수도 있음.
+  - Restrofit의 Client를 작성했다면, 터미널에 `flutter pub run build_runner build` 를 입력해 엔드포인트가 자동 생성되도록 하자.
