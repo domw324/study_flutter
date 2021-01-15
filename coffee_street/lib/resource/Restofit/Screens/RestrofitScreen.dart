@@ -1,4 +1,5 @@
 import 'package:coffee_street/resource/Restofit/Restrofit/RestClient.dart';
+import 'package:coffee_street/resource/Restofit/Restrofit/StradaClient.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +27,8 @@ class RestrofitScreen extends StatefulWidget {
 }
 
 class _RestrofiScreenState extends State<RestrofitScreen> {
-  RestClient client;
+  // RestClient client;
+  StradaClient staradaClient;
 
   @override
   void initState() {
@@ -34,28 +36,34 @@ class _RestrofiScreenState extends State<RestrofitScreen> {
 
     Dio dio = Dio();
 
-    client = RestClient(dio);
+    // client = RestClient(dio);
+    // Future.microtask(() async {
+    //   final resp = await client.getTopNews();
+    //
+    //   print(resp);
+    // });
 
+    staradaClient = StradaClient(dio);
     Future.microtask(() async {
-      final resp = await client.getTopNews();
+      final resp = await staradaClient.getHealth();
 
       print(resp);
     });
   }
 
-  renderNewsCard({
-    @required News news,
-}){
-    return Card(
-      child: Column(
-        children: [
-          Text(news.id.toString()),
-          Text(news.title),
-          Text(news.url),
-        ],
-      ),
-    );
-  }
+//   renderNewsCard({
+//     @required News news,
+// }){
+//     return Card(
+//       child: Column(
+//         children: [
+//           Text(news.id.toString()),
+//           Text(news.title),
+//           Text(news.url),
+//         ],
+//       ),
+//     );
+//   }
 
   @override
   Widget build(BuildContext context) {
@@ -64,8 +72,8 @@ class _RestrofiScreenState extends State<RestrofitScreen> {
         title: Text('Restrofit Intro'),
       ),
       body: FutureBuilder(
-        future: client.getTopNews(),
-        initialData: [],
+        future: staradaClient.getHealth(),
+        // initialData: [],
         builder: (_, AsyncSnapshot snapshot){
           if(snapshot.connectionState == ConnectionState.waiting) {
             return Center(
@@ -75,24 +83,39 @@ class _RestrofiScreenState extends State<RestrofitScreen> {
 
           final ids = snapshot.data;
 
-          return ListView.builder(
-            itemCount: ids.length,
-            itemBuilder: (_, index){
-              return FutureBuilder(
-                future: client.getNewsDetail(id: ids[index]),
-                builder: (_, AsyncSnapshot snapshot){
-                  if(snapshot.connectionState == ConnectionState.waiting) {
-                    return Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
-
-                  return renderNewsCard(news: snapshot.data);
-                },
-              );
-            },
+          return Center(
+            child: Text(ids.toString()),
           );
         },
+        // future: client.getTopNews(),
+        // initialData: [],
+        // builder: (_, AsyncSnapshot snapshot){
+        //   if(snapshot.connectionState == ConnectionState.waiting) {
+        //     return Center(
+        //       child: CircularProgressIndicator(),
+        //     );
+        //   }
+        //
+        //   final ids = snapshot.data;
+        //
+        //   return ListView.builder(
+        //     itemCount: ids.length,
+        //     itemBuilder: (_, index){
+        //       return FutureBuilder(
+        //         future: client.getNewsDetail(id: ids[index]),
+        //         builder: (_, AsyncSnapshot snapshot){
+        //           if(snapshot.connectionState == ConnectionState.waiting) {
+        //             return Center(
+        //               child: CircularProgressIndicator(),
+        //             );
+        //           }
+        //
+        //           return renderNewsCard(news: snapshot.data);
+        //         },
+        //       );
+        //     },
+        //   );
+        // },
       ),
     );
   }
