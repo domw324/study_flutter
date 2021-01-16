@@ -4,26 +4,57 @@ import 'package:dio/dio.dart';
 
 part 'StradaClient.g.dart';
 
-@RestApi(baseUrl:'http://ec2-3-35-55-47.ap-northeast-2.compute.amazonaws.com:8080/strada/v1')
+@RestApi(baseUrl:'http://ec2-3-35-55-47.ap-northeast-2.compute.amazonaws.com:8080')
 abstract class StradaClient {
   factory StradaClient(Dio dio, {String baseUrl}) = _StradaClient;
 
-  @GET('/health.json')
-  Future<Health> getHealth();
+  @POST('/strada/v1/account.json')
+  Future<Token> getToken(
+      @Query("phoneNumber") String phoneNumber
+      );
+
+  @GET('/strada/v1/health.json')
+  Future<List<Health>> getHealth();
+
+  @GET('/ping.json')
+  Future<Pong> getPingPong();
 
   // @GET('/v1/health/{id}.json')
   // Future<News> getNewsDetail({@Path() int id});
 }
 
 @JsonSerializable()
+class Token {
+  String accessToken;
+
+  Token({
+    this.accessToken,
+  });
+
+  factory Token.fromJson(Map<String, dynamic> json) => _$TokenFromJson(json);
+  Map<String, dynamic> toJson() => _$TokenToJson(this);
+}
+
+@JsonSerializable()
 class Health {
-  int state;
+  String state;
 
   Health({
     this.state,
   });
 
   factory Health.fromJson(Map<String, dynamic> json) => _$HealthFromJson(json);
-
   Map<String, dynamic> toJson() => _$HealthToJson(this);
+}
+
+@JsonSerializable()
+class Pong {
+  String pong;
+
+  Pong({
+    this.pong,
+  });
+
+  factory Pong.fromJson(Map<String, dynamic> json) => _$PongFromJson(json);
+  Map<String, String> toJson() => _$PongToJson(this);
 }

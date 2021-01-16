@@ -28,7 +28,7 @@ class RestrofitScreen extends StatefulWidget {
 
 class _RestrofiScreenState extends State<RestrofitScreen> {
   // RestClient client;
-  StradaClient staradaClient;
+  StradaClient stradaClient;
 
   @override
   void initState() {
@@ -43,11 +43,13 @@ class _RestrofiScreenState extends State<RestrofitScreen> {
     //   print(resp);
     // });
 
-    staradaClient = StradaClient(dio);
+    stradaClient = StradaClient(dio);
     Future.microtask(() async {
-      final resp = await staradaClient.getHealth();
+      // final resp = await stradaClient.getHealth();
+      // print(resp.toString());
 
-      print(resp);
+      final resp = await stradaClient.getToken("01056033399");
+      print(resp.accessToken.toString());
     });
   }
 
@@ -65,14 +67,37 @@ class _RestrofiScreenState extends State<RestrofitScreen> {
 //     );
 //   }
 
+  renderPong({
+    @required Pong pong,
+}){
+    return Card(
+      child: Column(
+        children: [
+          Text(pong.pong.toString()),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Restrofit Intro'),
+        title: Text('Retrofit Intro'),
+      ),
+      body: Center(
+        child: Text('Retrofit Test'),
+      ),
+    );
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Retrofit Intro'),
       ),
       body: FutureBuilder(
-        future: staradaClient.getHealth(),
+        // future: stradaClient.getHealth(),
+        // future: stradaClient.getPingPong(),
+        future: stradaClient.getToken('01056033399'),
         // initialData: [],
         builder: (_, AsyncSnapshot snapshot){
           if(snapshot.connectionState == ConnectionState.waiting) {
@@ -84,7 +109,9 @@ class _RestrofiScreenState extends State<RestrofitScreen> {
           final ids = snapshot.data;
 
           return Center(
-            child: Text(ids.toString()),
+            // child: renderPong(pong: snapshot.data),
+            // child : Text(snapshot.data.pong.toString()),
+            child: Text('test'),
           );
         },
         // future: client.getTopNews(),
