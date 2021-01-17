@@ -1,5 +1,7 @@
 import 'package:coffee_street/resource/Restofit/Restrofit/RestClient.dart';
 import 'package:coffee_street/resource/Restofit/Restrofit/StradaClient.dart';
+import 'package:coffee_street/resource/Restofit/Restrofit/base_model.dart';
+import 'package:coffee_street/resource/Restofit/Restrofit/server_error.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
@@ -44,12 +46,22 @@ class _RestrofiScreenState extends State<RestrofitScreen> {
     // });
 
     stradaClient = StradaClient(dio);
-    Future.microtask(() async {
-      // final resp = await stradaClient.getHealth();
-      // print(resp.toString());
 
-      final resp = await stradaClient.getToken("01056033399");
-      print(resp.accessToken.toString());
+    Future.microtask(() async {
+      Health response;
+      try {
+        response = await stradaClient.getHealth();
+      } catch (error, stacktrace) {
+        print("Exception occured: $error stackTrace: $stacktrace");
+        return BaseModel()..setException(ServerError.withError(error: error));
+      }
+      return BaseModel()..data = response;
+      //
+      // final resp3 = await stradaClient.getPingPong();
+      // print(resp3.pong.toString());
+      //
+      // final resp2 = await stradaClient.getToken("01056033399");
+      // print(resp2.accessToken.toString());
     });
   }
 
@@ -67,17 +79,17 @@ class _RestrofiScreenState extends State<RestrofitScreen> {
 //     );
 //   }
 
-  renderPong({
-    @required Pong pong,
-}){
-    return Card(
-      child: Column(
-        children: [
-          Text(pong.pong.toString()),
-        ],
-      ),
-    );
-  }
+//   renderPong({
+//     @required Pong pong,
+// }){
+//     return Card(
+//       child: Column(
+//         children: [
+//           Text(pong.pong.toString()),
+//         ],
+//       ),
+//     );
+//   }
 
   @override
   Widget build(BuildContext context) {
@@ -90,60 +102,60 @@ class _RestrofiScreenState extends State<RestrofitScreen> {
       ),
     );
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Retrofit Intro'),
-      ),
-      body: FutureBuilder(
-        // future: stradaClient.getHealth(),
-        // future: stradaClient.getPingPong(),
-        future: stradaClient.getToken('01056033399'),
-        // initialData: [],
-        builder: (_, AsyncSnapshot snapshot){
-          if(snapshot.connectionState == ConnectionState.waiting) {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-
-          final ids = snapshot.data;
-
-          return Center(
-            // child: renderPong(pong: snapshot.data),
-            // child : Text(snapshot.data.pong.toString()),
-            child: Text('test'),
-          );
-        },
-        // future: client.getTopNews(),
-        // initialData: [],
-        // builder: (_, AsyncSnapshot snapshot){
-        //   if(snapshot.connectionState == ConnectionState.waiting) {
-        //     return Center(
-        //       child: CircularProgressIndicator(),
-        //     );
-        //   }
-        //
-        //   final ids = snapshot.data;
-        //
-        //   return ListView.builder(
-        //     itemCount: ids.length,
-        //     itemBuilder: (_, index){
-        //       return FutureBuilder(
-        //         future: client.getNewsDetail(id: ids[index]),
-        //         builder: (_, AsyncSnapshot snapshot){
-        //           if(snapshot.connectionState == ConnectionState.waiting) {
-        //             return Center(
-        //               child: CircularProgressIndicator(),
-        //             );
-        //           }
-        //
-        //           return renderNewsCard(news: snapshot.data);
-        //         },
-        //       );
-        //     },
-        //   );
-        // },
-      ),
-    );
+    // return Scaffold(
+    //   appBar: AppBar(
+    //     title: Text('Retrofit Intro'),
+    //   ),
+    //   body: FutureBuilder(
+    //     // future: stradaClient.getHealth(),
+    //     // future: stradaClient.getPingPong(),
+    //     future: stradaClient.getToken('01056033399'),
+    //     // initialData: [],
+    //     builder: (_, AsyncSnapshot snapshot){
+    //       if(snapshot.connectionState == ConnectionState.waiting) {
+    //         return Center(
+    //           child: CircularProgressIndicator(),
+    //         );
+    //       }
+    //
+    //       final ids = snapshot.data;
+    //
+    //       return Center(
+    //         // child: renderPong(pong: snapshot.data),
+    //         // child : Text(snapshot.data.pong.toString()),
+    //         child: Text('test'),
+    //       );
+    //     },
+    //     // future: client.getTopNews(),
+    //     // initialData: [],
+    //     // builder: (_, AsyncSnapshot snapshot){
+    //     //   if(snapshot.connectionState == ConnectionState.waiting) {
+    //     //     return Center(
+    //     //       child: CircularProgressIndicator(),
+    //     //     );
+    //     //   }
+    //     //
+    //     //   final ids = snapshot.data;
+    //     //
+    //     //   return ListView.builder(
+    //     //     itemCount: ids.length,
+    //     //     itemBuilder: (_, index){
+    //     //       return FutureBuilder(
+    //     //         future: client.getNewsDetail(id: ids[index]),
+    //     //         builder: (_, AsyncSnapshot snapshot){
+    //     //           if(snapshot.connectionState == ConnectionState.waiting) {
+    //     //             return Center(
+    //     //               child: CircularProgressIndicator(),
+    //     //             );
+    //     //           }
+    //     //
+    //     //           return renderNewsCard(news: snapshot.data);
+    //     //         },
+    //     //       );
+    //     //     },
+    //     //   );
+    //     // },
+    //   ),
+    // );
   }
 }
