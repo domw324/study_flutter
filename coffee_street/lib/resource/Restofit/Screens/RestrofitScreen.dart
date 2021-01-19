@@ -48,20 +48,26 @@ class _RestrofiScreenState extends State<RestrofitScreen> {
     stradaClient = StradaClient(dio);
 
     Future.microtask(() async {
-      Health response;
       try {
-        response = await stradaClient.getHealth();
+        await stradaClient.getHealth();
       } catch (error, stacktrace) {
         print("Exception occured: $error stackTrace: $stacktrace");
         return BaseModel()..setException(ServerError.withError(error: error));
       }
-      return BaseModel()..data = response;
-      //
-      // final resp3 = await stradaClient.getPingPong();
-      // print(resp3.pong.toString());
-      //
-      // final resp2 = await stradaClient.getToken("01056033399");
-      // print(resp2.accessToken.toString());
+      print('Seccess "getHealth".');
+      return BaseModel()..data = true;
+    });
+
+    Future.microtask(() async {
+      Token userToken;
+      try {
+        userToken = await stradaClient.getToken("01056033399");
+      } catch (error, stacktrace) {
+        print("Exception occured: $error stackTrace: $stacktrace");
+        return BaseModel()..setException(ServerError.withError(error: error));
+      }
+      print("User Token : " + userToken.accessToken);
+      return BaseModel()..data = userToken.accessToken;
     });
   }
 

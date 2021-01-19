@@ -6,11 +6,15 @@ part of 'StradaClient.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Health _$HealthFromJson(Map<String, dynamic> json) {
-  return Health();
+Token _$TokenFromJson(Map<String, dynamic> json) {
+  return Token(
+    accessToken: json['accessToken'] as String,
+  );
 }
 
-Map<String, dynamic> _$HealthToJson(Health instance) => <String, dynamic>{};
+Map<String, dynamic> _$TokenToJson(Token instance) => <String, dynamic>{
+      'accessToken': instance.accessToken,
+    };
 
 // **************************************************************************
 // RetrofitGenerator
@@ -28,12 +32,11 @@ class _StradaClient implements StradaClient {
   String baseUrl;
 
   @override
-  Future<Health> getHealth() async {
+  Future<void> getHealth() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    final _result = await _dio.request<Map<String, dynamic>>(
-        '/strada/v1/health.json',
+    await _dio.request<void>('/strada/v1/health',
         queryParameters: queryParameters,
         options: RequestOptions(
             method: 'GET',
@@ -41,7 +44,26 @@ class _StradaClient implements StradaClient {
             extra: _extra,
             baseUrl: baseUrl),
         data: _data);
-    final value = Health.fromJson(_result.data);
+    return null;
+  }
+
+  @override
+  Future<Token> getToken(phoneNumber) async {
+    ArgumentError.checkNotNull(phoneNumber, 'phoneNumber');
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _data = {'phoneNumber': phoneNumber};
+    _data.removeWhere((k, v) => v == null);
+    final _result = await _dio.request<Map<String, dynamic>>(
+        '/strada/v1/account',
+        queryParameters: queryParameters,
+        options: RequestOptions(
+            method: 'POST',
+            headers: <String, dynamic>{},
+            extra: _extra,
+            baseUrl: baseUrl),
+        data: _data);
+    final value = Token.fromJson(_result.data);
     return value;
   }
 }

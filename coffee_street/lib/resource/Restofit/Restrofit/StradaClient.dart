@@ -11,41 +11,34 @@ abstract class StradaClient {
     return _StradaClient(dio, baseUrl: baseUrl);
   }
 
-  // @POST('/strada/v1/account.json')
-  // Future<Token> getToken(
-  //     @Query("phoneNumber") String phoneNumber
+  // Health
+  @GET('/strada/v1/health')
+  Future<void> getHealth();
+
+  // Token
+  @POST('/strada/v1/account')
+  Future<Token> getToken(
+      // @Query("phoneNumber") String phoneNumber
+      @Field("phoneNumber") String phoneNumber
+      );
+
+  // // Ping-Pong
+  // @GET('/ping')
+  // Future<Pong> getPingPong(
+  //     @Header("Authorization") String token,
   //     );
-
-  @GET('/strada/v1/health.json')
-  Future<Health> getHealth();
-  // Future<void> getHealth();
-
-  // @GET('/ping.json')
-  // Future<Pong> getPingPong();
-
-  // @GET('/v1/health/{id}.json')
-  // Future<News> getNewsDetail({@Path() int id});
 }
 
-// @JsonSerializable()
-// class Token {
-//   String accessToken;
-//
-//   Token({
-//     this.accessToken,
-//   });
-//
-//   factory Token.fromJson(Map<String, dynamic> json) => _$TokenFromJson(json);
-//   Map<String, dynamic> toJson() => _$TokenToJson(this);
-// }
-
 @JsonSerializable()
-class Health {
+class Token {
+  String accessToken;
 
-  Health();
+  Token({
+    this.accessToken,
+  });
 
-  factory Health.fromJson(Map<String, dynamic> json) => _$HealthFromJson(json);
-  Map<String, dynamic> toJson() => _$HealthToJson(this);
+  factory Token.fromJson(Map<String, dynamic> json) => _$TokenFromJson(json);
+  Map<String, dynamic> toJson() => _$TokenToJson(this);
 }
 
 // @JsonSerializable()
@@ -59,3 +52,4 @@ class Health {
 //   factory Pong.fromJson(Map<String, dynamic> json) => _$PongFromJson(json);
 //   Map<String, String> toJson() => _$PongToJson(this);
 // }
+
