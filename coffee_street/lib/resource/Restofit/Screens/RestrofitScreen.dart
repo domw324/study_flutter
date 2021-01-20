@@ -66,10 +66,54 @@ class _RestrofiScreenState extends State<RestrofitScreen> {
         print("Exception occured: $error stackTrace: $stacktrace");
         return BaseModel()..setException(ServerError.withError(error: error));
       }
-      print("User Token : " + userToken.accessToken);
+      final token = "Bearer " + userToken.accessToken;
+      print("User Token :" + token);
+
+      Future.microtask(() async {
+        String resString;
+        try {
+          resString = await stradaClient.getPong(token);
+        } catch (error, stacktrace) {
+          print("Exception occured: $error stackTrace: $stacktrace");
+          return BaseModel()..setException(ServerError.withError(error: error));
+        }
+        print(resString);
+      });
+
+      return BaseModel()..data = token;
+    });
+  }
+
+  getUserToken({
+    @required String phoneNumber,
+    }){
+    Future.microtask(() async {
+      Token userToken;
+      try {
+        userToken = await stradaClient.getToken("01056033399");
+      } catch (error, stacktrace) {
+        print("Exception occured: $error stackTrace: $stacktrace");
+        return BaseModel()..setException(ServerError.withError(error: error));
+      }
       return BaseModel()..data = userToken.accessToken;
     });
   }
+
+  getPong({
+    @required String token,
+  }){
+    Future.microtask(() async {
+      String resPong;
+      try {
+        resPong = await stradaClient.getPong(token);
+      } catch (error, stacktrace) {
+        print("Exception occured: $error stackTrace: $stacktrace");
+        return BaseModel()..setException(ServerError.withError(error: error));
+      }
+      return BaseModel()..data = resPong;
+    });
+  }
+
 
 //   renderNewsCard({
 //     @required News news,
@@ -99,69 +143,81 @@ class _RestrofiScreenState extends State<RestrofitScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Retrofit Intro'),
-      ),
-      body: Center(
-        child: Text('Retrofit Test'),
-      ),
-    );
-
     // return Scaffold(
     //   appBar: AppBar(
     //     title: Text('Retrofit Intro'),
     //   ),
-    //   body: FutureBuilder(
-    //     // future: stradaClient.getHealth(),
-    //     // future: stradaClient.getPingPong(),
-    //     future: stradaClient.getToken('01056033399'),
-    //     // initialData: [],
-    //     builder: (_, AsyncSnapshot snapshot){
-    //       if(snapshot.connectionState == ConnectionState.waiting) {
-    //         return Center(
-    //           child: CircularProgressIndicator(),
-    //         );
-    //       }
-    //
-    //       final ids = snapshot.data;
-    //
-    //       return Center(
-    //         // child: renderPong(pong: snapshot.data),
-    //         // child : Text(snapshot.data.pong.toString()),
-    //         child: Text('test'),
-    //       );
-    //     },
-    //     // future: client.getTopNews(),
-    //     // initialData: [],
-    //     // builder: (_, AsyncSnapshot snapshot){
-    //     //   if(snapshot.connectionState == ConnectionState.waiting) {
-    //     //     return Center(
-    //     //       child: CircularProgressIndicator(),
-    //     //     );
-    //     //   }
-    //     //
-    //     //   final ids = snapshot.data;
-    //     //
-    //     //   return ListView.builder(
-    //     //     itemCount: ids.length,
-    //     //     itemBuilder: (_, index){
-    //     //       return FutureBuilder(
-    //     //         future: client.getNewsDetail(id: ids[index]),
-    //     //         builder: (_, AsyncSnapshot snapshot){
-    //     //           if(snapshot.connectionState == ConnectionState.waiting) {
-    //     //             return Center(
-    //     //               child: CircularProgressIndicator(),
-    //     //             );
-    //     //           }
-    //     //
-    //     //           return renderNewsCard(news: snapshot.data);
-    //     //         },
-    //     //       );
-    //     //     },
-    //     //   );
-    //     // },
+    //   body: Center(
+    //     child: Text('Retrofit Test'),
     //   ),
     // );
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Retrofit Intro'),
+      ),
+      body: FutureBuilder(
+        // future: stradaClient.getHealth(),
+        // future: stradaClient.getPingPong(),
+        future: stradaClient.getToken('01056033399'),
+        // initialData: [],
+        builder: (_, AsyncSnapshot snapshot){
+          if(snapshot.connectionState == ConnectionState.waiting) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+
+          final token = "Bearer " + snapshot.data.accessToken;
+
+          return Center(
+            child: FutureBuilder(
+              future: stradaClient.getPong(token),
+              builder: (_, AsyncSnapshot snapshot){
+                if(snapshot.connectionState == ConnectionState.waiting) {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+
+                return Text(snapshot.data.toString());
+              },
+            ),
+            // child: renderPong(pong: snapshot.data),
+            // child : Text(snapshot.data.pong.toString()),
+            // child: Text('test'),
+          );
+        },
+        // future: client.getTopNews(),
+        // initialData: [],
+        // builder: (_, AsyncSnapshot snapshot){
+        //   if(snapshot.connectionState == ConnectionState.waiting) {
+        //     return Center(
+        //       child: CircularProgressIndicator(),
+        //     );
+        //   }
+        //
+        //   final ids = snapshot.data;
+        //
+        //   return ListView.builder(
+        //     itemCount: ids.length,
+        //     itemBuilder: (_, index){
+        //       return FutureBuilder(
+        //         future: client.getNewsDetail(id: ids[index]),
+        //         builder: (_, AsyncSnapshot snapshot){
+        //           if(snapshot.connectionState == ConnectionState.waiting) {
+        //             return Center(
+        //               child: CircularProgressIndicator(),
+        //             );
+        //           }
+        //
+        //           return renderNewsCard(news: snapshot.data);
+        //         },
+        //       );
+        //     },
+        //   );
+        // },
+      ),
+    );
   }
 }

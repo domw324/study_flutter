@@ -1,6 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';
+import 'package:retrofit/http.dart';
+import 'package:dio/src/headers.dart';
 
 part 'StradaClient.g.dart';
 
@@ -18,15 +20,14 @@ abstract class StradaClient {
   // Token
   @POST('/strada/v1/account')
   Future<Token> getToken(
-      // @Query("phoneNumber") String phoneNumber
       @Field("phoneNumber") String phoneNumber
       );
 
-  // // Ping-Pong
-  // @GET('/ping')
-  // Future<Pong> getPingPong(
-  //     @Header("Authorization") String token,
-  //     );
+  // Ping-Pong
+  @GET('/ping')
+  Future<String> getPong(
+      @Header("authorization") String token,
+      );
 }
 
 @JsonSerializable()
