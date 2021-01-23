@@ -380,3 +380,6 @@
 - 정리
   - `@Get` 방식일때 `@Query`, `@QueryMap` 을 사용
   - `Post` 방식일때 `@Field` 와 `@FieldMap` 을 사용
+  
+### 21.01.23.토
+- Strada 프로젝트에 retrofit 
