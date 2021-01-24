@@ -380,3 +380,21 @@
 - 정리
   - `@Get` 방식일때 `@Query`, `@QueryMap` 을 사용
   - `Post` 방식일때 `@Field` 와 `@FieldMap` 을 사용
+
+---
+
+## N+3주차
+
+### 21.01.24.일
+**회의록**
+- 정적변수/전역?변수 로 관리해야할 것들 분류하고 관리해보자
+  - Store = 전역 저장소, 여기서 꺼내써야 할 듯
+  - base url : 정적 클래스로 관리 필요
+- server client 코드를 생성하는 패턴이 있을까?
+  - Bloc / Provider pattern 으로 해결할 수 있지 않을까?
+  이걸 정리해서 한번에 알려주자.
+- token같은 경우에는 한번에 관리하는 것이 좋을 것 같다.
+  - retrofit2 로 갈아타는게 좋을까?
+- 해야 할 일
+  1. Bloc/Provider 적용한 패턴 모델 개발
+  2. refresh frame work 개발
