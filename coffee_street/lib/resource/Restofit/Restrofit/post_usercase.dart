@@ -7,11 +7,11 @@ import 'base_model.dart';
 
 class PostUsecase {
   Dio dio;
-  ApiClient apiClient;
+  AutoLogin apiClient;
 
   PostUsecase() {
     dio = new Dio();
-    apiClient = new ApiClient(dio);
+    apiClient = new AutoLogin(dio);
   }
 
   Future<BaseModel<Post>> getPostFromId(int id) async {

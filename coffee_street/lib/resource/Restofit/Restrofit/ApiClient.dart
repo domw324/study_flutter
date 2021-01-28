@@ -6,8 +6,8 @@ import 'package:dio/dio.dart';
 part 'ApiClient.g.dart';
 
 @RestApi(baseUrl:'http://ec2-3-35-55-47.ap-northeast-2.compute.amazonaws.com:8080')
-abstract class ApiClient {
-  factory ApiClient(Dio dio){
+abstract class AutoLogin {
+  factory AutoLogin(Dio dio){
     dio.options = BaseOptions(receiveTimeout: 5000, connectTimeout: 5000);
     return _ApiClient(dio, baseUrl: baseUrl);}
 

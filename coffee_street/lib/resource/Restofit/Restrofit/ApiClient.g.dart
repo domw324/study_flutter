@@ -6,7 +6,7 @@ part of 'ApiClient.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-class _ApiClient implements ApiClient {
+class _ApiClient implements AutoLogin {
   _ApiClient(this._dio, {this.baseUrl}) {
     ArgumentError.checkNotNull(_dio, '_dio');
     baseUrl ??=
