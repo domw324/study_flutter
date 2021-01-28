@@ -402,3 +402,12 @@
 
 ### 21.01.28.목
 - [Flutter:Local Storage (Shared Preferences) — Auto Login](https://medium.com/@lawrey/flutter-local-storage-ac2eaf1194be) 실습
+- ```dart
+  # pubspec.pub에 추가해 줘야할 패키지
+
+  dependencies:
+  flutter:
+    sdk: flutter
+  # Add 'shared_preferences' for Auto Login
+  shared_preferences: ^0.5.1+2
+  ```
