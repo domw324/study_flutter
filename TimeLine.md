@@ -399,3 +399,6 @@
 - 해야 할 일
   1. Bloc/Provider 적용한 패턴 모델 개발
   2. refresh frame work 개발
+
+### 21.01.28.목
+- [Flutter:Local Storage (Shared Preferences) — Auto Login](https://medium.com/@lawrey/flutter-local-storage-ac2eaf1194be) 실습
