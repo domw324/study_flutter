@@ -418,3 +418,6 @@
 
 ### 21.02.01.월
 - [BLoC 이해 하기 및 간단 정리 하기](https://pks2974.medium.com/bloc-%EC%9D%B4%ED%95%B4-%ED%95%98%EA%B8%B0-%EB%B0%8F-%EA%B0%84%EB%8B%A8-%EC%A0%95%EB%A6%AC-%ED%95%98%EA%B8%B0-7dc705e4c640)
+
+### 21.02.02.화
+- [BLoC Pattern 활용해서 Login 기능 구현]](https://fenderist.tistory.com/135)
